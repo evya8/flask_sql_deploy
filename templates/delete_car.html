@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block title %}Confirm Deletion{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="text-danger">Confirm Deletion</h1>
+        <p class="lead">Are you sure you want to delete the following car?</p>
+        
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Car ID</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ car[0] }}</td>
+                    <td>{{ car[1] }}</td>
+                    <td>{{ car[2] }}</td>
+                    <td>{{ car[3] }}</td>
+                    <td>{{ car[4] }}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <form action="{{ url_for('confirm_delete', car_id=car_id) }}" method="post">
+            <button type="submit" class="btn btn-danger">Confirm Delete</button>
+        </form>
+        
+        <a href="{{ url_for('cars') }}" class="btn btn-secondary">Cancel</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+    {% block head %}
+    <style>
+        .header {
+            background-color: #81c3d6;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+    <style>
+        /* The existing navbar container */
+        .navbar {
+            overflow: hidden;
+            background-color: rgba(134, 144, 209, 0.389);
+        }
+
+        /* Existing Navbar links styles */
+        .navbar a {
+            float: left;
+            display: block;
+            text-align: center;
+            padding: 14px 70px;
+            text-decoration: none;
+        }
+
+        /* Links - change color on hover */
+        .navbar a:hover {
+            background-color: #ddd;
+            color: rgb(10, 9, 9);
+        }
+    </style>
+
+    <title>{% block title %}{% endblock %} - Cars Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    {% endblock %}
+</head>
+
+<body>
+    <div class="header">
+        <h1>Cars Manager</h1>
+    </div>
+    <div class="navbar" class="text-center">
+        <a href='/' class="link-success">Home</a>
+        <a href="/register" class="link-danger">Register User</a>
+        <a href="/login" class="link-danger">Login User</a>
+        <a href="/cars" class="link-success">Cars</a>
+        <a href="/add_car" class="link-danger">Add Car</a>
+
+
+    </div>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    <div id="footer" class="text-center">
+        {% block footer %}
+        <div class="text-bg-light p-3"> contact us with any inquery : {{my_email}}</div>
+        &copy; Copyright 2023 by @Evya
+        {% endblock %}
+    </div>
+</body>
+
+</html>

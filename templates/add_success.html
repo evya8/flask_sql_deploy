@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block title %}Car Added Successfully{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="text-success">Car Added Successfully</h1>
+        <p class="lead">Your car has been added to the inventory.</p>
+        <a href="{{ url_for('add_car') }}" class="btn btn-primary">Back to Add Car</a>
+    </div>
+{% endblock %}

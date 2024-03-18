@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block title %}Update Car{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-4 text-warning mb-4">🚗 Update Car 🚗</h1>
+        </div>
+
+        <form action="{{ url_for('update_car', car_id=car[0]) }}" method="post" class="bg-dark p-4 rounded">
+            <div class="mb-3">
+                <label for="brand" class="form-label text-light">Brand:</label>
+                <input type="text" class="form-control" id="brand" name="brand" value="{{ car[1] }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="model" class="form-label text-light">Model:</label>
+                <input type="text" class="form-control" id="model" name="model" value="{{ car[2] }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="color" class="form-label text-light">Color:</label>
+                <input type="text" class="form-control" id="color" name="color" value="{{ car[3] }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="year" class="form-label text-light">Year:</label>
+                <input type="number" class="form-control" id="year" name="year" value="{{ car[4] }}" required>
+            </div>
+
+            <button type="submit" class="btn btn-warning">Update Car</button>
+        </form>
+    </div>
+{% endblock %}
